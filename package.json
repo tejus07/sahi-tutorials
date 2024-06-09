@@ -1,8 +1,9 @@
 {
-  "name": "tuition-website",
+  "name": "sahi-tutorials",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://tejus07.github.io/sahi-tutorials",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
