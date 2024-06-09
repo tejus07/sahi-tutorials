@@ -20,7 +20,7 @@
   .hero {
     position: relative;
     height: 400px;
-    background-image: url('@/assets/hero-background.jpg');
+    /* background-image: url('@/assets/hero-background.jpg'); */
     background-size: cover;
     background-position: center;
   }
