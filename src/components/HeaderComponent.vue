@@ -31,10 +31,6 @@
 </script>
 
 <style scoped>
-header {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-}
 
 .navbar {
     display: flex;
