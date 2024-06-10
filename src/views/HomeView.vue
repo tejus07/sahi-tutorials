@@ -1,10 +1,22 @@
 <template>
     <div class="home">
-        <HeroComponent />
-        <IntroductionComponent />
-        <TestimonialsComponent /> 
-        <ServicesComponent />
-        <AboutComponent />
+        <section id="home">
+            <HeroComponent />
+            <IntroductionComponent />
+        </section>
+        <section id="about">
+            <AboutComponent />
+        </section>
+        <section id="services">
+            <ServicesComponent />
+        </section>
+        <section id="testimonials">
+            <TestimonialsComponent />
+        </section>
+        <section id="contact">
+            <ContactFormComponent />
+        </section>
+
     </div>
 </template>
 
@@ -15,6 +27,7 @@ import ServicesComponent from '../components/ServicesComponent.vue';
 import AboutComponent from '../components/AboutComponent.vue';
 import IntroductionComponent from '../components/IntroductionComponent.vue';
 import HeroComponent from '../components/HeroComponent.vue';
+import ContactFormComponent from '../components/ContactFormComponent.vue';
 
 export default defineComponent({
     name: 'HomeView',
@@ -23,7 +36,8 @@ export default defineComponent({
         TestimonialsComponent,
         ServicesComponent,
         AboutComponent,
-        HeroComponent
+        HeroComponent,
+        ContactFormComponent
     }
 });
 </script>

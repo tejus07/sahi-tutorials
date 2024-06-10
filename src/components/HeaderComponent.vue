@@ -7,19 +7,19 @@
             </div>
             <ul class="navbar-menu">
                 <li class="navbar-item">
-                    <RouterLink to="/">Home</RouterLink>
+                    <a href="#home" @click.prevent="scrollTo('home')">Home</a>
                 </li>
                 <li class="navbar-item">
-                    <RouterLink to="/about">About</RouterLink>
+                    <a href="#about" @click.prevent="scrollTo('about')">About</a>
                 </li>
                 <li class="navbar-item">
-                    <RouterLink to="/services">Services</RouterLink>
+                    <a href="#services" @click.prevent="scrollTo('services')">Services</a>
                 </li>
                 <li class="navbar-item">
-                    <RouterLink to="/testimonials">Testimonials</RouterLink>
+                    <a href="#testimonials" @click.prevent="scrollTo('testimonials')">Testimonials</a>
                 </li>
                 <li class="navbar-item">
-                    <RouterLink to="/contact">Contact</RouterLink>
+                    <a href="#contact" @click.prevent="scrollTo('contact')">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -27,11 +27,15 @@
 </template>
 
 <script setup lang="ts">
-
+const scrollTo = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+};
 </script>
 
 <style scoped>
-
 .navbar {
     display: flex;
     justify-content: space-between;

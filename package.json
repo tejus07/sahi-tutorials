@@ -11,8 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "vue": "^3.4.21",
-    "vue-router": "4"
+    "vue": "^3.4.21"
   },
   "devDependencies": {
     "@types/node": "^20.14.2",
