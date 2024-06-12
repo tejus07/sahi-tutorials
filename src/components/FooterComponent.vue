@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer">
+    <v-footer class="footer">
         <div class="footer-content">
             <div class="footer-section about">
                 <h2>Your Tuition Name</h2>
@@ -17,7 +17,7 @@
         <div class="footer-bottom">
             <p>© {{ currentYear }} Sahi Tutorials. All rights reserved.</p>
         </div>
-    </footer>
+    </v-footer>
 </template>
 
 <script lang="ts">

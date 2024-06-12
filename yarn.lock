@@ -127,6 +127,11 @@
   resolved "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.15.tgz"
   integrity sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==
 
+"@mdi/font@^7.4.47":
+  version "7.4.47"
+  resolved "https://registry.yarnpkg.com/@mdi/font/-/font-7.4.47.tgz#2ae522867da3a5c88b738d54b403eb91471903af"
+  integrity sha512-43MtGpd585SNzHZPcYowu/84Vz2a2g31TvPMTm9uTiCSWzaheQySUcSyUH/46fPnuPQWof2yd0pGBtzee/IQWw==
+
 "@rollup/rollup-android-arm-eabi@4.18.0":
   version "4.18.0"
   resolved "https://registry.yarnpkg.com/@rollup/rollup-android-arm-eabi/-/rollup-android-arm-eabi-4.18.0.tgz#bbd0e616b2078cd2d68afc9824d1fadb2f2ffd27"
@@ -339,6 +344,13 @@
   resolved "https://registry.npmjs.org/@vue/shared/-/shared-3.4.27.tgz"
   integrity sha512-DL3NmY2OFlqmYYrzp39yi3LDkKxa5vZVwxWdQ3rG0ekuWscHraeIbnI8t+aZK7qhYqEqWKTUdijadunb9pnrgA==
 
+"@vuetify/loader-shared@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@vuetify/loader-shared/-/loader-shared-2.0.3.tgz#11451c717e4a352ec311da52a79c857cd256c92f"
+  integrity sha512-Ss3GC7eJYkp2SF6xVzsT7FAruEmdihmn4OCk2+UocREerlXKWgOKKzTN5PN3ZVN5q05jHHrsNhTuWbhN61Bpdg==
+  dependencies:
+    upath "^2.0.1"
+
 array-union@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/array-union/-/array-union-1.0.2.tgz#9a34410e4f4e3da23dea375be5be70f24778ec39"
@@ -405,6 +417,13 @@ de-indent@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/de-indent/-/de-indent-1.0.2.tgz"
   integrity sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==
+
+debug@^4.3.3:
+  version "4.3.5"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.5.tgz#e83444eceb9fedd4a1da56d671ae2446a01a6e1e"
+  integrity sha512-pt0bNEmneDIvdL1Xsd9oDQ/wrQRkXDT4AUWlNZNPKvW5x/jyO9VFXkJUP07vQ2upmw5PlaITaPKc31jK13V+jg==
+  dependencies:
+    ms "2.1.2"
 
 email-addresses@^5.0.0:
   version "5.0.0"
@@ -608,6 +627,11 @@ minimatch@^9.0.3:
   dependencies:
     brace-expansion "^2.0.1"
 
+ms@2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
+  integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
+
 muggle-string@^0.4.0:
   version "0.4.1"
   resolved "https://registry.npmjs.org/muggle-string/-/muggle-string-0.4.1.tgz"
@@ -771,6 +795,20 @@ universalify@^2.0.0:
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-2.0.1.tgz#168efc2180964e6386d061e094df61afe239b18d"
   integrity sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==
 
+upath@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/upath/-/upath-2.0.1.tgz#50c73dea68d6f6b990f51d279ce6081665d61a8b"
+  integrity sha512-1uEe95xksV1O0CYKXo8vQvN1JEbtJp7lb7C5U9HMsIp6IVwntkH/oNUzyVNQSd4S1sYk2FpSSW44FqMc8qee5w==
+
+vite-plugin-vuetify@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/vite-plugin-vuetify/-/vite-plugin-vuetify-2.0.3.tgz#b65ee4e05cfc6bf2b478a32b6d58b42398519f1e"
+  integrity sha512-HbYajgGgb/noaVKNRhnnXIiQZrNXfNIeanUGAwXgOxL6h/KULS40Uf51Kyz8hNmdegF+DwjgXXI/8J1PNS83xw==
+  dependencies:
+    "@vuetify/loader-shared" "^2.0.3"
+    debug "^4.3.3"
+    upath "^2.0.1"
+
 vite@^5.2.0:
   version "5.2.13"
   resolved "https://registry.npmjs.org/vite/-/vite-5.2.13.tgz"
@@ -814,6 +852,11 @@ vue@^3.4.21:
     "@vue/runtime-dom" "3.4.27"
     "@vue/server-renderer" "3.4.27"
     "@vue/shared" "3.4.27"
+
+vuetify@^3.6.0-beta.0.0:
+  version "3.6.0-beta.0.0"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.6.0-beta.0.0.tgz#3e34311e5a97544f4de9f603fcb639234e4befb9"
+  integrity sha512-tG/d+nDEXsY33jr7B0Z/NBEkB9YSkDfb2X4wCL3B2fr2ggWv6H/WkhUtyiksuS/7s7ZYWPik8Obtoe4yqiVj4w==
 
 wrappy@1:
   version "1.0.2"

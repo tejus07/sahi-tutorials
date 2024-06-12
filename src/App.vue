@@ -1,10 +1,12 @@
 <template>
-  <HeaderComponent/>
-  <main>
-    <HomeView/>
-  </main>
-  <ScrollToTop />
-  <FooterComponent />
+  <v-app>
+    <HeaderComponent/>
+    <v-main>
+      <HomeView/>
+    </v-main>
+    <ScrollToTop />
+    <FooterComponent />
+  </v-app>
 </template>
 
 <script setup lang="ts">
