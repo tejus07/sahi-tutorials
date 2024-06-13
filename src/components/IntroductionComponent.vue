@@ -7,7 +7,6 @@
       <p>
         Our teaching methods are personalized and effective, ensuring that each student receives the attention and support they need to succeed. Join us and experience the difference that our commitment to education can make.
       </p>
-      <router-link to="/about" class="learn-more">Learn More About Us</router-link>
     </div>
   </template>
   

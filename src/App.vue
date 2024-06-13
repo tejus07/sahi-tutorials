@@ -1,8 +1,10 @@
 <template>
-  <v-app>
-    <HeaderComponent/>
-    <v-main>
-      <HomeView/>
+  <v-app class="rounded rounded-md">
+    
+    <HeaderComponent />
+    <v-main class="d-flex align-center justify-center">
+      <HomeView />
+
     </v-main>
     <ScrollToTop />
     <FooterComponent />
@@ -17,6 +19,4 @@ import HomeView from './views/HomeView.vue';
 
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

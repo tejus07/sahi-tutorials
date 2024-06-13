@@ -3,7 +3,6 @@
       <div class="hero-content">
         <h1>Welcome to Sahi Tutorials</h1>
         <p>Providing high-quality education for over 20 years</p>
-        <router-link to="/about" class="cta-button">Learn More</router-link>
       </div>
     </div>
   </template>

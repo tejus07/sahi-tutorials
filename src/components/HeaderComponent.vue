@@ -1,10 +1,9 @@
 <template>
     <header>
-        <nav class="navbar">
-            <div class="navbar-brand">
-                <img src="../assets/vue.svg" alt="Logo" class="logo" />
-                <span class="brand-name">Sahi Tutorials</span>
-            </div>
+        <v-app-bar :elevation="0">
+            <img src="../assets/vue.svg" alt="Logo" class="logo" />
+            <v-app-bar-title>Sahi Tutorials</v-app-bar-title>
+            <v-spacer></v-spacer>
             <ul class="navbar-menu">
                 <li class="navbar-item">
                     <a href="#home" @click.prevent="scrollTo('home')">Home</a>
@@ -22,11 +21,21 @@
                     <a href="#contact" @click.prevent="scrollTo('contact')">Contact</a>
                 </li>
             </ul>
-        </nav>
+      <v-btn :prepend-icon="theme.global.current.value.dark ? 'mdi-weather-night' : 'mdi-weather-sunny'"
+        slim @click="toggleTheme"></v-btn>
+    </v-app-bar>
     </header>
 </template>
 
 <script setup lang="ts">
+import { useTheme } from 'vuetify'
+const theme = useTheme();
+const tabs = ['Home','About', 'Services', 'Testimonials', 'Contact'];
+
+function toggleTheme() {
+  theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
+}
+
 const scrollTo = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
