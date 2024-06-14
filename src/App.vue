@@ -1,10 +1,8 @@
 <template>
   <v-app class="rounded rounded-md">
-    
     <HeaderComponent />
     <v-main class="d-flex align-center justify-center">
       <HomeView />
-
     </v-main>
     <ScrollToTop />
     <FooterComponent />

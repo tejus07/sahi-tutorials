@@ -25,7 +25,7 @@
             <v-btn :prepend-icon="theme.global.current.value.dark ? 'mdi-weather-night' : 'mdi-weather-sunny'" slim
                 @click="toggleTheme"></v-btn>
         </v-app-bar>
-        <v-navigation-drawer v-model="drawer" app>
+        <v-navigation-drawer width="300" v-model="drawer" app>
             <v-list>
                 <v-list-item v-for="(item, index) in items" :key="index" :prepend-icon="getIcon(item.title)"
                     @click.prevent="handleItemClick(item.section)" :title="item.title">
@@ -48,7 +48,6 @@ const items = [
     { title: 'Testimonials', section: 'testimonials' },
     { title: 'Contact', section: 'contact' },
 ];
-// const tabs = ['Home','About', 'Services', 'Testimonials', 'Contact'];
 
 function toggleTheme() {
     theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
