@@ -2,9 +2,9 @@
     <div class="home">
         <section id="home">
             <HeroComponent />
-            <IntroductionComponent />
+            <!-- <IntroductionComponent /> -->
         </section>
-        <section id="about">
+        <!-- <section id="about">
             <AboutComponent />
         </section>
         <section id="services">
@@ -15,7 +15,7 @@
         </section>
         <section id="contact">
             <ContactFormComponent />
-        </section>
+        </section> -->
 
     </div>
 </template>

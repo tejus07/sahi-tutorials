@@ -1,7 +1,7 @@
 <template>
-  <v-app class="rounded rounded-md">
-    <HeaderComponent />
-    <v-main class="d-flex align-center justify-center">
+<v-app class="rounded rounded-md">
+      <HeaderComponent />
+    <v-main>
       <HomeView />
     </v-main>
     <ScrollToTop />
