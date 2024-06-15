@@ -1,5 +1,5 @@
 <template>
-  <v-card class="introduction mx-auto" width="800">
+  <v-card class="introduction mx-auto">
     <v-card-title>Welcome to Sahi Tutorials</v-card-title>
     <v-card-item></v-card-item>
     <v-card-text> At Sahi Tutorials, we are dedicated to providing high-quality education to students from class 1 to
