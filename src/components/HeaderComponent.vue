@@ -1,31 +1,27 @@
 <template>
     <header>
         <v-app-bar :elevation="0">
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+            <div class="logo d-flex align-center justify-center pl-2">
+                <img src="@/assets/sahi-tutorials-logo-without-bg.png" alt="Sahi Tutorials Logo" width="50"></img>
+            </div>
             <!-- <img src="../assets/vue.svg" alt="Logo" class="logo" /> -->
             <v-app-bar-title>Sahi Tutorials</v-app-bar-title>
-            <!-- <v-spacer></v-spacer> -->
-            <!-- <ul class="navbar-menu">
-                <li class="navbar-item">
-                    <a href="#home" @click.prevent="scrollTo('home')">Home</a>
-                </li>
-                <li class="navbar-item">
-                    <a href="#about" @click.prevent="scrollTo('about')">About</a>
-                </li>
-                <li class="navbar-item">
-                    <a href="#services" @click.prevent="scrollTo('services')">Services</a>
-                </li>
-                <li class="navbar-item">
-                    <a href="#testimonials" @click.prevent="scrollTo('testimonials')">Testimonials</a>
-                </li>
-                <li class="navbar-item">
-                    <a href="#contact" @click.prevent="scrollTo('contact')">Contact</a>
-                </li>
-            </ul> -->
-            <v-btn :prepend-icon="theme.global.current.value.dark ? 'mdi-weather-night' : 'mdi-weather-sunny'" slim
-                @click="toggleTheme"></v-btn>
+            <v-spacer></v-spacer>
+            <v-list v-if="!isMobile" class="d-flex align-center">
+                <v-list-item v-for="(item, index) in items" :key="index"
+                    @click.prevent="handleItemClick(item.section)">
+                    <v-icon :class="[getIcon(item.title),'mdi']" size="small"></v-icon>
+                    <span>{{ item.title }}</span>
+                </v-list-item>
+            </v-list>
+            <v-btn slim @click="toggleTheme">
+                <v-icon
+                    :class="theme.global.current.value.dark ? 'mdi mdi-weather-night' : ' mdi mdi-weather-sunny'"></v-icon>
+            </v-btn>
+            <v-app-bar-nav-icon v-if="isMobile" @click.stop="toggleDrawer"></v-app-bar-nav-icon>
+
         </v-app-bar>
-        <v-navigation-drawer width="300" v-model="drawer" app>
+        <v-navigation-drawer width="300" v-model="drawer" app v-if="isMobile">
             <v-list>
                 <v-list-item v-for="(item, index) in items" :key="index" :prepend-icon="getIcon(item.title)"
                     @click.prevent="handleItemClick(item.section)" :title="item.title">
@@ -37,7 +33,8 @@
 
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
-import { ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
+import { useDisplay } from 'vuetify'
 
 const theme = useTheme();
 const drawer = ref(false);
@@ -52,6 +49,10 @@ const items = [
 function toggleTheme() {
     theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
 }
+
+const toggleDrawer = () => {
+  drawer.value = !drawer.value;
+};
 
 const scrollTo = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -75,47 +76,16 @@ const getIcon = (title: string) => {
     };
     return iconMap[title] || 'mdi-help-circle';
 };
+
+const { xs, smAndDown } = useDisplay();
+const isMobile = computed(() => xs.value || smAndDown.value);
+
+onMounted(() => {
+    console.log(drawer);
+  console.log(isMobile.value);
+});
+
 </script>
 
 <style scoped>
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-}
-
-.navbar-brand {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    height: 40px;
-    margin-right: 0.5rem;
-}
-
-.brand-name {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.navbar-menu {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-}
-
-.navbar-item {
-    font-size: 1rem;
-}
-
-.navbar-item a {
-    text-decoration: none;
-    color: #333;
-}
-
-.navbar-item a:hover {
-    text-decoration: underline;
-}
 </style>

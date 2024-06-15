@@ -1,22 +1,28 @@
 <template>
-    <v-footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h2>Your Tuition Name</h2>
-                <p>
-                    Providing quality education for over 20 years. Helping students from
-                    class 1 to 12 achieve their academic goals.
-                </p>
-            </div>
-            <div class="footer-section contact">
-                <h3>Contact Us</h3>
-                <p>Email: contact@tuitionexample.com</p>
-                <p>Phone: +1 (234) 567-8901</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© {{ currentYear }} Sahi Tutorials. All rights reserved.</p>
-        </div>
+    <v-footer class="bg-grey-lighten-1 d-flex flex-column">
+        <v-container>
+            <v-row>
+                <v-col cols="12" md="6">
+                    <h2>Sahi Tutorials</h2>
+                    <p>
+                        Providing quality education for over 20 years. Helping students from
+                        class 1 to 12 achieve their academic goals.
+                    </p>
+                </v-col>
+                <v-col cols="12" md="6">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@tuitionexample.com</p>
+                    <p>Phone: +1 (234) 567-8901</p>
+                </v-col>
+            </v-row>
+            <v-row justify="center">
+                <v-col cols="12" md="6">
+                    <p class="sq-mt-0 text-center text-sm text-gray-400"> © {{ currentYear }} Sahi Tutorials. All rights
+                        reserved. </p>
+                </v-col>
+
+            </v-row>
+        </v-container>
     </v-footer>
 </template>
 
@@ -34,20 +40,4 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.footer {
-    padding: 20px 0;
-    text-align: center;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
-.footer-section {
-    flex: 1;
-    margin: 10px;
-}
 </style>
