@@ -1,6 +1,6 @@
 <template>
-    <v-footer class="bg-grey-lighten-1 d-flex flex-column">
-        <v-container>
+    <v-footer class="d-flex flex-column">
+        <v-container class="pa-2">
             <v-row>
                 <v-col cols="12" md="6">
                     <h2>Sahi Tutorials</h2>

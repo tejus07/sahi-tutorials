@@ -1,12 +1,12 @@
 <template>
     <header>
         <v-app-bar :elevation="0">
-            <div class="logo d-flex align-center justify-center pl-2">
+            <!-- <div class="logo d-flex align-center justify-center pl-2">
                 <img src="@/assets/sahi-tutorials-logo-without-bg.png" alt="Sahi Tutorials Logo" width="50"></img>
-            </div>
+            </div> -->
             <!-- <img src="../assets/vue.svg" alt="Logo" class="logo" /> -->
-            <v-app-bar-title>Sahi Tutorials</v-app-bar-title>
-            <v-spacer></v-spacer>
+            <v-app-bar-title tag="div">Sahi Tutorials</v-app-bar-title>
+            <!-- <v-spacer></v-spacer> -->
             <v-list v-if="!isMobile" class="d-flex align-center">
                 <v-list-item v-for="(item, index) in items" :key="index"
                     @click.prevent="handleItemClick(item.section)">
@@ -18,6 +18,7 @@
                 <v-icon
                     :class="theme.global.current.value.dark ? 'mdi mdi-weather-night' : ' mdi mdi-weather-sunny'"></v-icon>
             </v-btn>
+            <v-btn class="text-none" variant="outlined">contact us</v-btn>
             <v-app-bar-nav-icon v-if="isMobile" @click.stop="toggleDrawer"></v-app-bar-nav-icon>
 
         </v-app-bar>

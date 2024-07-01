@@ -28,7 +28,7 @@
         size="x-large"
         variant="elevated"
         block 
-       append-icon="mdi-home">Explore Opportunities</v-btn>
+       append-icon="mdi-chevron-down">Explore Opportunities</v-btn>
     </v-row>
   </v-container>
 </template>
@@ -38,37 +38,6 @@ import TypingAnimation from './TypingAnimation.vue';
 </script>
 
 <style scoped>
-/* .introduction {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-align: center;
-  }
-  
-  .introduction h2 {
-    margin-bottom: 20px;
-  }
-  
-  .introduction p {
-    margin-bottom: 15px;
-  }
-  
-  .learn-more {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-  }
-  
-  .learn-more:hover {
-    background-color: #0056b3;
-  } */
 .intro-text {
   padding-top: 80px;
   padding-bottom: 80px;

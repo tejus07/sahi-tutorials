@@ -1,21 +1,21 @@
 <template>
     <div class="home">
-        <section id="home">
+        <section id="home" class="section">
             <!-- <v-parallax :src="blurryGradient"> -->
             <!-- </v-parallax> -->
             <IntroductionComponent />
             <HeroComponent />
         </section>
-        <section id="about">
+        <section id="about" class="section">
             <AboutComponent />
         </section>
-        <section id="services">
+        <section id="services" class="section">
             <ServicesComponent />
         </section>
-        <section id="testimonials">
+        <section id="testimonials" class="section">
             <TestimonialsComponent />
         </section>
-        <section id="contact">
+        <section id="contact" class="section">
             <ContactFormComponent />
         </section>
 
@@ -34,4 +34,7 @@ import ContactFormComponent from '../components/ContactFormComponent.vue';
 
 </script>
 
-<style scoped></style>
+<style scoped>
+.section {
+  scroll-margin-top: 60px;
+}</style>
