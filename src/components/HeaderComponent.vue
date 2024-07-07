@@ -1,11 +1,11 @@
 <template>
     <header>
         <v-app-bar :elevation="0">
-            <!-- <div class="logo d-flex align-center justify-center pl-2">
-                <img src="@/assets/sahi-tutorials-logo-without-bg.png" alt="Sahi Tutorials Logo" width="50"></img>
-            </div> -->
+            <div class="logo d-flex align-center justify-center pl-2">
+                <img src="@/assets/learningexpress-without-bg.png" alt="Sahi Tutorials Logo" width="50"></img>
+            </div>
             <!-- <img src="../assets/vue.svg" alt="Logo" class="logo" /> -->
-            <v-app-bar-title tag="div">Sahi Tutorials</v-app-bar-title>
+            <v-app-bar-title class="ml-3 font-weight-bold" tag="div">Sahi Tutorials</v-app-bar-title>
             <!-- <v-spacer></v-spacer> -->
             <v-list v-if="!isMobile" class="d-flex align-center">
                 <v-list-item v-for="(item, index) in items" :key="index"
@@ -14,7 +14,7 @@
                     <span>{{ item.title }}</span>
                 </v-list-item>
             </v-list>
-            <v-btn slim @click="toggleTheme">
+            <v-btn v-if="!isMobile" slim @click="toggleTheme">
                 <v-icon
                     :class="theme.global.current.value.dark ? 'mdi mdi-weather-night' : ' mdi mdi-weather-sunny'"></v-icon>
             </v-btn>
@@ -89,4 +89,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.logo{
+    transform: scale(1.4);
+}
 </style>

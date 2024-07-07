@@ -1,30 +1,33 @@
 <template>
-  <div class="contact-form">
-    <h2>Contact Us</h2>
-    <form @submit.prevent="handleSubmit">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" v-model="form.name" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" v-model="form.email" required />
-      </div>
-      <div class="form-group">
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" v-model="form.subject" required />
-      </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" v-model="form.message" rows="5" required></textarea>
-      </div>
-      <button type="submit">Send</button>
-    </form>
-  </div>
+  <v-form v-model="valid">
+    <v-container>
+      <v-row>
+        <h2>Contact us</h2>
+      </v-row>
+      <v-row>
+        <v-col cols="12" md="6">
+          <v-text-field variant="outlined" v-model="form.name" :rules="nameRules" label="Name" required></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols="12" md="6">
+          <v-text-field variant="outlined" v-model="form.email" :rules="emailRules" label="E-mail"
+            required></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols="12" md="6">
+          <v-textarea variant="outlined" v-model="form.message" :counter="120" :rules="message" label="Message" required
+            maxlength="120" single-line></v-textarea>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-form>
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { ref, reactive } from 'vue';
+const valid = ref(false);
 
 const form = reactive({
   name: '',
@@ -32,6 +35,46 @@ const form = reactive({
   subject: '',
   message: '',
 });
+
+const nameRules = [
+  (value: string) => {
+    if (value) return true
+
+    return 'Name is required.'
+  },
+  (value: string) => {
+    if (value?.length <= 10) return true
+
+    return 'Name must be less than 10 characters.'
+  },
+];
+
+const message = [
+  (value: string) => {
+    if (value) return true
+
+    return 'Message is required.'
+  },
+  (value: string) => {
+    if (value?.length >= 1) return true
+
+    return 'Message must be greater than 1 characters.'
+  },
+];
+
+
+const emailRules = [
+  (value: string) => {
+    if (value) return true
+
+    return 'E-mail is requred.'
+  },
+  (value: string) => {
+    if (/.+@.+\..+/.test(value)) return true
+
+    return 'E-mail must be valid.'
+  },
+]
 
 const handleSubmit = () => {
   alert('Form submitted!'); // Replace with actual form submission logic
@@ -44,52 +87,4 @@ const handleSubmit = () => {
 };
 </script>
 
-<style scoped>
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-}
-
-.contact-form h2 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-</style>
+<style scoped></style>
