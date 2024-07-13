@@ -1,5 +1,6 @@
 <template>
-  <v-form v-model="valid">
+  <!-- validate-on="submit lazy" @submit.prevent="handleSubmit" -->
+  <v-form v-model="valid" >
     <v-container>
       <v-row>
         <h2>Contact us</h2>
@@ -21,13 +22,19 @@
             maxlength="120" single-line></v-textarea>
         </v-col>
       </v-row>
+      <v-btn :loading="loading" class="mt-2" type="submit" block @click.prevent="handleSubmit">
+        Submit
+      </v-btn>
     </v-container>
   </v-form>
 </template>
 
 <script setup lang="ts">
+import axios from 'axios';
 import { ref, reactive } from 'vue';
-const valid = ref(false);
+
+let valid = ref(false);
+let loading = ref(false);
 
 const form = reactive({
   name: '',
@@ -76,15 +83,41 @@ const emailRules = [
   },
 ]
 
-const handleSubmit = () => {
-  alert('Form submitted!'); // Replace with actual form submission logic
-  console.log('Form data:', form);
-  // Reset form
-  form.name = '';
-  form.email = '';
-  form.subject = '';
-  form.message = '';
-};
+async function handleSubmit() {
+  loading.value = true;
+
+  const url = 'https://script.google.com/macros/s/AKfycbytgRCVfJ_nEGMN40-UcimaVm6BP_E0s2EIf1eX28FC9T27Kl_Q8DiulQy0m1ncsf86cg/exec';
+  const data = {
+    name: form.name,
+    email: form.email,
+    message: form.message
+  };
+
+  try {
+    const response = await axios.post(url, data, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (response.data.result === 'success') {
+      alert('Form submitted successfully');
+      console.log('Form data:', form);
+
+      // Reset form
+      form.name = '';
+      form.email = '';
+      form.message = '';
+    } else {
+      throw new Error('Form submission failed');
+    }
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    alert('Error submitting form');
+  } finally {
+    loading.value = false;
+  }
+}
 </script>
 
 <style scoped></style>
