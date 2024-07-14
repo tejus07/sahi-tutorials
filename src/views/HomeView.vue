@@ -6,14 +6,14 @@
             <IntroductionComponent />
             <HeroComponent />
         </section>
-        <section id="about" class="section">
-            <AboutComponent />
-        </section>
         <section id="services" class="section">
             <ServicesComponent />
         </section>
         <section id="testimonials" class="section">
             <TestimonialsComponent />
+        </section>
+        <section id="about" class="section">
+            <AboutComponent />
         </section>
         <section id="contact" class="section">
             <ContactFormComponent />
@@ -36,5 +36,6 @@ import ContactFormComponent from '../components/ContactFormComponent.vue';
 
 <style scoped>
 .section {
-  scroll-margin-top: 60px;
-}</style>
+    scroll-margin-top: 60px;
+}
+</style>

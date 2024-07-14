@@ -1,28 +1,31 @@
 <template>
   <!-- validate-on="submit lazy" @submit.prevent="handleSubmit" -->
-  <v-form v-model="valid" >
+  <v-form v-model="valid" @submit.prevent="handleSubmit">
     <v-container>
       <v-row>
-        <h2>Contact us</h2>
-      </v-row>
-      <v-row>
         <v-col cols="12" md="6">
-          <v-text-field variant="outlined" v-model="form.name" :rules="nameRules" label="Name" required></v-text-field>
+          <div class="text-h5">Contact us</div>
         </v-col>
       </v-row>
       <v-row>
         <v-col cols="12" md="6">
-          <v-text-field variant="outlined" v-model="form.email" :rules="emailRules" label="E-mail"
-            required></v-text-field>
+          <v-text-field variant="outlined" required v-model="form.name" :rules="nameRules" validate-on="blur"
+            label="Name"></v-text-field>
         </v-col>
       </v-row>
       <v-row>
         <v-col cols="12" md="6">
-          <v-textarea variant="outlined" v-model="form.message" :counter="120" :rules="message" label="Message" required
-            maxlength="120" single-line></v-textarea>
+          <v-text-field variant="outlined" required v-model="form.number" :counter="10" prefix="+91" :rules="phoneRules"
+            validate-on="blur" label="Phone Number"></v-text-field>
         </v-col>
       </v-row>
-      <v-btn :loading="loading" class="mt-2" type="submit" block @click.prevent="handleSubmit">
+      <v-row>
+        <v-col cols="12" md="6">
+          <v-textarea variant="outlined" required v-model="form.message" :counter="120" :rules="message"
+            validate-on="blur" label="Message" maxlength="120" single-line></v-textarea>
+        </v-col>
+      </v-row>
+      <v-btn :loading="loading" class="mt-2" type="submit" block>
         Submit
       </v-btn>
     </v-container>
@@ -30,7 +33,6 @@
 </template>
 
 <script setup lang="ts">
-import axios from 'axios';
 import { ref, reactive } from 'vue';
 
 let valid = ref(false);
@@ -38,7 +40,7 @@ let loading = ref(false);
 
 const form = reactive({
   name: '',
-  email: '',
+  number: '',
   subject: '',
   message: '',
 });
@@ -70,47 +72,32 @@ const message = [
 ];
 
 
-const emailRules = [
+const phoneRules = [
   (value: string) => {
-    if (value) return true
+    if (value) return true;
 
-    return 'E-mail is requred.'
+    return 'Phone number is required.';
   },
   (value: string) => {
-    if (/.+@.+\..+/.test(value)) return true
+    if (/^[6-9]\d{9}$/.test(value)) return true;
 
-    return 'E-mail must be valid.'
+    return 'Phone number must be a valid 10-digit Indian number starting with 6, 7, 8, or 9.';
   },
-]
+];
 
 async function handleSubmit() {
+  if (!valid.value) {
+    return;
+  }
   loading.value = true;
 
-  const url = 'https://script.google.com/macros/s/AKfycbytgRCVfJ_nEGMN40-UcimaVm6BP_E0s2EIf1eX28FC9T27Kl_Q8DiulQy0m1ncsf86cg/exec';
-  const data = {
-    name: form.name,
-    email: form.email,
-    message: form.message
-  };
-
   try {
-    const response = await axios.post(url, data, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
+    alert('Form submitted successfully');
 
-    if (response.data.result === 'success') {
-      alert('Form submitted successfully');
-      console.log('Form data:', form);
-
-      // Reset form
-      form.name = '';
-      form.email = '';
-      form.message = '';
-    } else {
-      throw new Error('Form submission failed');
-    }
+    // Reset form
+    form.name = '';
+    form.number = '';
+    form.message = '';
   } catch (error) {
     console.error('Error submitting form:', error);
     alert('Error submitting form');
