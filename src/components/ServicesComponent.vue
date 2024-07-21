@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, reactive } from 'vue';
+import { reactive } from 'vue';
 
 interface Service {
   id: number;
