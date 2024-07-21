@@ -3,8 +3,8 @@
         <v-container class="pa-2">
             <v-row>
                 <v-col cols="12" md="6">
-                    <h2>Sahi Tutorials</h2>
-                    <p>
+                    <div class="text-h6 font-weight-bold">Sahi Tutorials</div>
+                    <p class="text-body-1">
                         Providing quality education for over 20 years. Helping students from
                         class 1 to 12 achieve their academic goals.
                     </p>

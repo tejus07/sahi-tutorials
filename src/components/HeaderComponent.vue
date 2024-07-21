@@ -5,7 +5,7 @@
                 <img src="@/assets/learningexpress-without-bg.png" alt="Sahi Tutorials Logo" width="50"></img>
             </div>
             <!-- <img src="../assets/vue.svg" alt="Logo" class="logo" /> -->
-            <v-app-bar-title class="ml-3 font-weight-bold" tag="div">Sahi Tutorials</v-app-bar-title>
+            <v-app-bar-title class="ml-3 font-weight-bold text-h5" tag="div">Sahi Tutorials</v-app-bar-title>
             <!-- <v-spacer></v-spacer> -->
             <v-list v-if="!isMobile" class="d-flex align-center">
                 <v-list-item v-for="(item, index) in items" :key="index"
@@ -22,7 +22,7 @@
             <v-app-bar-nav-icon v-if="isMobile" @click.stop="toggleDrawer"></v-app-bar-nav-icon>
 
         </v-app-bar>
-        <v-navigation-drawer width="300" v-model="drawer" app v-if="isMobile">
+        <v-navigation-drawer location="top" width="270" v-model="drawer" app v-if="isMobile">
             <v-list>
                 <v-list-item v-for="(item, index) in items" :key="index" :prepend-icon="getIcon(item.title)"
                     @click.prevent="handleItemClick(item.section)" :title="item.title">

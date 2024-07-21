@@ -1,10 +1,18 @@
 <template>
   <div class="testimonials">
     <h2>Testimonials</h2>
-    <div class="testimonial" v-for="testimonial in testimonials" :key="testimonial.id">
-      <p class="message">{{ testimonial.message }}</p>
-      <p class="author">- {{ testimonial.author }}</p>
-    </div>
+
+    <v-carousel  height="200"
+    show-arrows="hover"
+    cycle
+    hide-delimiter-background>
+      <v-carousel-item v-for="testimonial in testimonials" :key="testimonial.id">
+        <div class="testimonial">
+          <p class="message">{{ testimonial.message }}</p>
+          <p class="author">- {{ testimonial.author }}</p>
+        </div>
+      </v-carousel-item>
+    </v-carousel>
   </div>
 </template>
 

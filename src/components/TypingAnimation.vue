@@ -46,7 +46,6 @@ onMounted(() => {
 
 <style scoped>
 .typing-container {
-    /* font-family: 'Courier New', Courier, monospace; */
     display: inline-block;
 }
 
@@ -84,7 +83,6 @@ onMounted(() => {
     border-radius: 4px;
     line-height: 1.3076923077em;
     background-color: #6A307D;
-    font-family: Outfit, sans-serif !important;
 }
 
 @media (max-width:480px) {

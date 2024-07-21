@@ -51,11 +51,9 @@ import TypingAnimation from './TypingAnimation.vue';
 .intro-text h1 {
   line-height: 1.3076923077em;
   margin-bottom: 10px;
-  font-family: Outfit, sans-serif !important;
 }
 
 .intro-text p {
-  font-family: "Open Sans", sans-serif !important;
   max-width: 636px;
 }
 
