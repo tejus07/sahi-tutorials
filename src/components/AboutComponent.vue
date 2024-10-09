@@ -34,7 +34,7 @@
       <li>Supportive learning environment</li>
       <li>Continuous improvement</li>
     </ul>
-    <h3>Meet Our Teacher</h3>
+    <!-- <h3>Meet Our Teacher</h3>
     <div class="teacher">
       <img src="@/assets/vue.svg" alt="Teacher Photo" class="teacher-photo" />
       <p>
@@ -42,7 +42,7 @@
         and is dedicated to helping each student reach their full potential. Her teaching methods are innovative and
         tailored to meet the needs of individual students.
       </p>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -54,8 +54,8 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
+  /* background-color: #f9f9f9; */
+  /* border: 1px solid #ddd; */
   border-radius: 4px;
 }
 

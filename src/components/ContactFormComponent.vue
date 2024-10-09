@@ -93,7 +93,7 @@ async function handleSubmit() {
 
   try {
     alert('Form submitted successfully');
-
+    await contactOnWhatsApp();
     // Reset form
     form.name = '';
     form.number = '';
@@ -104,6 +104,15 @@ async function handleSubmit() {
   } finally {
     loading.value = false;
   }
+}
+
+async function contactOnWhatsApp() {
+  const whatsappNumber = '8699646885';
+  const message = encodeURIComponent(
+    `Hello! I would like to contact you.\n\nName: ${form.name}\nPhone Number: ${form.number}\nMessage: ${form.message}`
+  );
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+  window.open(whatsappUrl, '_blank');
 }
 </script>
 

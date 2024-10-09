@@ -49,9 +49,9 @@ const testimonials = ref<Testimonial[]>([
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  /* background-color: #f9f9f9; */
+  /* border: 1px solid #ddd; */
+  /* border-radius: 4px; */
 }
 
 .testimonials h2 {

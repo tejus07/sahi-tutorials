@@ -1,5 +1,6 @@
 <template>
-  <v-row>
+  <v-container>
+    <v-row>
     <v-col class="d-flex flex-column flex-wrap">
       <img class="mb-5 " src="../assets/zigzag-line.svg"/>
       <div class="mx-5">
@@ -24,6 +25,7 @@
 
     </v-col>
   </v-row>
+  </v-container>
 </template>
 
 <script setup lang="ts">
