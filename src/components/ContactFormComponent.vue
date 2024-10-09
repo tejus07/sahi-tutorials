@@ -92,8 +92,8 @@ async function handleSubmit() {
   loading.value = true;
 
   try {
-    alert('Form submitted successfully');
     await contactOnWhatsApp();
+    alert('Form submitted successfully');
     // Reset form
     form.name = '';
     form.number = '';
